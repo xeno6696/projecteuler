@@ -1,0 +1,9 @@
+{
+  "name": "projecteuler",
+  "description": "My solutions for project euler.",
+  "homepage": "https://github.com/xeno6696",
+  "private": false,
+  "has_issues": true,
+  "has_wiki": true,
+  "has_downloads": true
+}
