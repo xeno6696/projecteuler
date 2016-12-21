@@ -11,7 +11,7 @@ def fermatTest( p ):
     negatives = 0
     if p == 1:
         return True
-    if p == 2:
+    elif p == 2:
         return True
     elif p % 2 == 0:
         return False
@@ -34,5 +34,17 @@ def fermatTest( p ):
 def millerRabin( p ):
     isComposite = False
 
+    if p == 2:
+        return True
+    elif p % 2 == 0 or p == 1
+        return False
 
+    #Formula requires the expression 2s*d where it represents factoring
+    #all powers of 2 from n - 1
+    d = p - 1
+    while x % 2 == 0 
+    
+    for i in xrange(p):
+        a = random.randint(2, p-2)
+          
     return isComposite
