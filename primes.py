@@ -36,7 +36,7 @@ def millerRabin( p ):
 
     if p == 2:
         return True
-    elif p % 2 == 0 or p == 1
+    elif p % 2 == 0 or p == 1:
         return False
 
     #Formula requires the expression 2s*d where it represents factoring
@@ -45,8 +45,8 @@ def millerRabin( p ):
     s = 0
     while r % 2 == 0:
         s += 1
-        print "Factoring 2s from %d" % d
-        d /= 2
+        print "Factoring 2s from %d" % r
+        r /= 2
     
     for i in xrange(p):
         a = random.randint(2, p-2)
