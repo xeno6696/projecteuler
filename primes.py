@@ -45,8 +45,6 @@ def millerRabin( p ):
     #all powers of 2 from n - 1
     r = p - 1
     s = 0
-    positives = 0
-    negatives = 0
     #Also could use divmod... returns a quotient and remainder...
     while r % 2 == 0:
         s += 1
@@ -59,6 +57,7 @@ def millerRabin( p ):
     return isComposite
 
 def try_composite(p, r):
+    
     for i in xrange(p):
         #print "p is {0}".format(p)
         a = random.randint(2, p)
@@ -66,6 +65,7 @@ def try_composite(p, r):
         if y == 1:
             return False
         if pow(p, 2**i * r, p) == p-1:
+            print "{0}**{1} % {2}".format(p, 2**i * r, p)
             return False
     
     return True
