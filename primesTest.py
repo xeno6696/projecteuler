@@ -1,10 +1,10 @@
 import primes
 
-for i in xrange(24):
-    print "Fermat: {0}, result: {1}".format(i, primes.fermatTest(i))
-    print "MillerRabin: {0}, result: {1}".format(i, primes.millerRabin(i))
-    print "isPrime: {0}, result: {1}".format(i, primes.isPrime(i))
-    print "\n"
+#for i in xrange(24):
+    #print "Fermat: {0}, result: {1}".format(i, primes.fermatTest(i))
+    #print "MillerRabin: {0}, result: {1}".format(i, primes.millerRabin(i))
+    #print "isPrime: {0}, result: {1}".format(i, primes.isPrime(i))
+    #print "\n"
 
 assert primes.isPrime(1) == True
 assert primes.isPrime(2) == True
@@ -21,4 +21,4 @@ assert primes.isPrime(13) == True
 assert primes.isPrime(17) == True
 assert primes.isPrime(19) == True
 assert primes.isPrime(23) == True
-wq
+

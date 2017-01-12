@@ -48,9 +48,10 @@ def millerRabin( p ):
     #Also could use divmod... returns a quotient and remainder...
     while r % 2 == 0:
         s += 1
-        #print "Factoring 2s from %d" % r
+        print "Factoring 2 from {0}".format(r)
         r /= 2
-    
+
+    print "asserting 2**{0} * {1} = {2} and {3}-1={4}".format(s, r, 2**s *r, p, p-1)
     assert(2**s * r == p-1)
     isComposite = try_composite(p, r)
     
@@ -61,11 +62,12 @@ def try_composite(p, r):
     for i in xrange(p):
         #print "p is {0}".format(p)
         a = random.randint(2, p)
+        
         y = pow(a, r, p)
-        if y == 1:
+        print "computing:  {0}**{1} % {2} == {3}".format(a, r, p, y)
+        if y == 1:            
             return False
-        if pow(p, 2**i * r, p) == p-1:
-            print "{0}**{1} % {2}".format(p, 2**i * r, p)
+        if y != p-1:
             return False
     
     return True
