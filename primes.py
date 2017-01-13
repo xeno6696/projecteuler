@@ -1,10 +1,12 @@
 import math, binet, random
 
-def isPrime( p ):
-    return fermatTest(p) and not millerRabin(p)
+def isPrime( p, times):
+    return fermatTest(p, times) and not millerRabin(p, times)
 
 #Heuristic test that returns if a number is "probably prime."
-def fermatTest( p ):
+# p - number to test for primality
+# times - number of times to apply the test
+def fermatTest( p, times):
     isPrime = False
     #print "Testing %d " % p
     positives = 0
@@ -16,7 +18,7 @@ def fermatTest( p ):
     elif p % 2 == 0:
         return False
     
-    for i in xrange(p):
+    for i in xrange(times):
         answer = random.randint(1, p - 1)
         raised = pow(answer, p-1) % p
         #print "pow({0}, {1}-1) % {2} == {3}".format(answer, p, p, raised)
@@ -31,7 +33,7 @@ def fermatTest( p ):
         
     return isPrime
 
-def millerRabin( p ):
+def millerRabin( p, times ):
     isComposite = False
 
     if p == 2:
@@ -53,13 +55,16 @@ def millerRabin( p ):
 
     #print "asserting 2**{0} * {1} = {2} and {3}-1={4}".format(s, r, 2**s *r, p, p-1)
     assert(2**s * r == p-1)
-    isComposite = try_composite(p, r)
+    isComposite = try_composite(p, r, times)
     
     return isComposite
 
-def try_composite(p, r):
+# p = primes to test
+# r = result of factoring all twos from p
+# times = number of times to apply rabin test.  
+def try_composite(p, r, times):
     
-    for i in xrange(p):
+    for i in xrange(times):
         #print "p is {0}".format(p)
         a = random.randint(2, p)
         
